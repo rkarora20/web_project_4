@@ -1,0 +1,15 @@
+.modal__body {
+  position: relative;
+  max-width: 430px;
+  padding: 34px 36px 36.5px;
+  border-radius: 10px;
+  color: #1e1e1e;
+  background-color: #fefefe;
+}
+
+@media screen and (max-width: 320px) {
+  .modal__body {
+    max-width: 282px;
+    padding: 25px 22px;
+  }
+}

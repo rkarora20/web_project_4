@@ -1,0 +1,11 @@
+.profile__image {
+    max-width: 120px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__image {
+        align-self: center;
+    }
+  }
+  

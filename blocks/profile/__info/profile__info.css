@@ -7,6 +7,14 @@
   grid-template-columns: 90% 10%;
 }
 
+/* @media screen and (max-width: 1024px) {
+  .profile__info {
+    max-width: 224px;
+    gap: 10px;
+    align-self: center;
+  }
+} */
+
 @media screen and (max-width: 320px) {
   .profile__info {
     max-width: 224px;

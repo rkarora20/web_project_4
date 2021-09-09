@@ -4,6 +4,20 @@
   padding: 45px 200px 40px;
 }
 
+@media screen and (max-width: 1024px) {
+  .header {
+    max-width: 768px;
+    padding: 45px 60px 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    max-width: 650px;
+    padding: 28px 0px 32px 27px;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .header {
     max-width: 320px;

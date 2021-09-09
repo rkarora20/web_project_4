@@ -8,6 +8,14 @@
   padding: 0;
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .profile__add-button {
+    min-width: 120px;
+    align-self: center;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__add-button {
     max-width: 282px;

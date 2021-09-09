@@ -3,6 +3,12 @@
   gap: 30px;
 }
 
+@media screen and (max-width: 768px) {
+  .profile__main-container {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .profile__main-container {
     max-width: 282px;

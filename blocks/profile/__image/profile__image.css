@@ -3,8 +3,14 @@
   border-radius: 50%;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .profile__image {
     align-self: center;
   }
 }
+
+/* @media screen and (max-width: 320px) {
+  .profile__image {
+    align-self: center;
+  }
+} */

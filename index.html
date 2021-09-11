@@ -4,17 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./vendor/normalize.css" />
     <link rel="stylesheet" href="./pages/index.css" />
     <title>Around The U.S.</title>
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/Vector.svg" class="header__logo" alt=" header logo" />
+        <img
+          src="./images/Vector.svg"
+          class="header__logo"
+          alt=" header logo"
+        />
       </header>
-
-      <hr class="line" />
 
       <main class="content">
         <section class="profile">
@@ -27,16 +28,16 @@
             <div class="profile__container">
               <div class="profile__info">
                 <h1 class="profile__heading">Jacques Cousteau</h1>
-                <button class="profile__edit-button" title="edit profile name">
-                  <img src="./images/edit-button.svg" alt="edit-button" />
-                </button>
+                <button
+                  class="profile__edit-button"
+                  title="edit profile name"
+                  type="button"
+                ></button>
               </div>
               <p class="profile__subheading">Explorer</p>
             </div>
           </div>
-          <button class="profile__add-button">
-            <img src="./images/add-button.svg" alt="add-button" />
-          </button>
+          <button class="profile__add-button" type="button"></button>
         </section>
 
         <section class="elements">
@@ -47,12 +48,8 @@
               class="element__image"
             />
             <div class="element__info">
-              <p class="element__description">yosemite valley</p>
-              <img
-                src="./images/like-button.svg"
-                alt="like-button"
-                class="element__like-button"
-              />
+              <h2 class="element__description">yosemite valley</h2>
+              <button class="element__like-button" type="button"></button>
             </div>
           </article>
           <article class="element">
@@ -62,12 +59,8 @@
               class="element__image"
             />
             <div class="element__info">
-              <p class="element__description">Lake Louise</p>
-              <img
-                src="./images/like-button.svg"
-                alt="like-button"
-                class="element__like-button"
-              />
+              <h2 class="element__description">Lake Louise</h2>
+              <button class="element__like-button" type="button"></button>
             </div>
           </article>
           <article class="element">
@@ -77,12 +70,8 @@
               class="element__image"
             />
             <div class="element__info">
-              <p class="element__description">Bald Mountains</p>
-              <img
-                src="./images/like-button.svg"
-                alt="like-button"
-                class="element__like-button"
-              />
+              <h2 class="element__description">Bald Mountains</h2>
+              <button class="element__like-button" type="button"></button>
             </div>
           </article>
           <article class="element">
@@ -92,12 +81,8 @@
               class="element__image"
             />
             <div class="element__info">
-              <p class="element__description">Latemar</p>
-              <img
-                src="./images/like-button.svg"
-                alt="like-button"
-                class="element__like-button"
-              />
+              <h2 class="element__description">Latemar</h2>
+              <button class="element__like-button" type="button"></button>
             </div>
           </article>
           <article class="element">
@@ -107,12 +92,8 @@
               class="element__image"
             />
             <div class="element__info">
-              <p class="element__description">Vanoise National Park</p>
-              <img
-                src="./images/like-button.svg"
-                alt="like-button"
-                class="element__like-button"
-              />
+              <h2 class="element__description">Vanoise National Park</h2>
+              <button class="element__like-button" type="button"></button>
             </div>
           </article>
           <article class="element">
@@ -122,48 +103,39 @@
               class="element__image"
             />
             <div class="element__info">
-              <p class="element__description">Lago di Braies</p>
-              <img
-                src="./images/like-button.svg"
-                alt="like-button"
-                class="element__like-button"
-              />
+              <h2 class="element__description">Lago di Braies</h2>
+              <button class="element__like-button" type="button"></button>
             </div>
           </article>
         </section>
 
         <section class="modal">
           <div class="modal__body">
-            <button class="modal__close-btn">
-              <img src="./images/Close Icon.svg" alt="modal close button" class="button-image" />
-            </button>
+            <button class="modal__close-btn" type="button"></button>
             <h2 class="modal__title">Edit profile</h2>
-            <form class="form">
-              <label class="form__label">
-                <input
-                  type="text"
-                  name="profile-title"
-                  id="profile-title"
-                  class="form__input"
-                  placeholder="Name"
-                />
-              </label>
-              <label class="form__label">
-                <input
-                  type="text"
-                  name="profile-subtitle"
-                  id="profile-subtitle"
-                  class="form__input"
-                  placeholder="About me"
-                />
-              </label>
-              <button class="modal__save-button">Save</button>
+            <form class="form" name="form">
+              <input
+                type="text"
+                name="profile-title"
+                id="profile-title"
+                class="form__input"
+                placeholder="Name"
+              />
+              <input
+                type="text"
+                name="profile-subtitle"
+                id="profile-subtitle"
+                class="form__input"
+                placeholder="About me"
+              />
+              <button class="modal__save-button" type="submit">Save</button>
             </form>
           </div>
         </section>
       </main>
 
-      <footer class="footer">© 2021 Around The U.S.</footer>
+      <footer class="footer">
+        <p class="footer__content">© 2021 Around The U.S.</p></footer>
     </div>
     <script src="./scripts/index.js"></script>
   </body>

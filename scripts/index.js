@@ -10,18 +10,22 @@ const closeBtn = document.querySelector('.modal__close-btn');
 
 // form
 const form = document.querySelector(".form");
-// const formInput = document.querySelector(".form__input");
 const profileTitle = document.querySelector("#profile-title");
 const profileSubtitle = document.querySelector("#profile-subtitle");
 
 // form values
-profileTitle.value = profileHeading.textContent;
-profileSubtitle.value = profileSubheading.textContent;
-
 
 function modalToggle() {
     modal.classList.toggle("modal_is-open");
-}
+    if ("modal_is-open") {
+        profileTitle.value = "";
+        profileSubtitle.value ="";
+    }
+    else {
+        profileTitle.value = profileHeading.textContent;
+        profileSubtitle.value = profileSubheading.textContent;
+    }
+    }
 
 function updateProfile(event) {
     event.preventDefault();

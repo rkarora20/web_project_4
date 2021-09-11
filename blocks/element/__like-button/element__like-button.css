@@ -5,6 +5,12 @@
   margin: 0;
   align-self: center;
   cursor: pointer;
+  background-image: url(../../../images/like-button.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border-color: transparent;
+  box-sizing: content-box;
 }
 
 .element__like-button:hover {

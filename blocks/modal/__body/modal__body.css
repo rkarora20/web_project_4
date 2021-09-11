@@ -10,6 +10,7 @@
 @media screen and (max-width: 320px) {
   .modal__body {
     max-width: 282px;
+    /* max-height: 322px; */
     padding: 25px 22px;
   }
 }

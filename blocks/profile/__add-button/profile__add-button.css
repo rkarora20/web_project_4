@@ -2,20 +2,37 @@
   min-width: 150px;
   min-height: 50px;
   border: 2px solid #ffffff;
+  border-radius: 2px;
+  box-sizing: border-box;
   background-color: black;
   align-self: center;
   margin: 0;
   padding: 0;
   cursor: pointer;
+  background-image: url(../../../images/add-button.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @media screen and (max-width: 768px) {
   .profile__add-button {
     min-width: 120px;
-    align-self: center;
   }
 }
 
+@media screen and (max-width: 720px) {
+  .profile__add-button {
+    min-width: 80px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .profile__add-button {
+    max-width: 382px;
+    margin-top: 36px;
+    align-self: stretch;
+  }
+}
 @media screen and (max-width: 320px) {
   .profile__add-button {
     max-width: 282px;

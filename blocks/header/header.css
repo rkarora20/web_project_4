@@ -1,26 +1,46 @@
 .header {
   max-width: 880px;
   margin: 0 auto;
-  padding: 45px 200px 40px;
+  padding: 45px 0 40px;
+  border-bottom: 1px solid RGBA(84, 84, 84, 0.7);
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1024px) {
   .header {
     max-width: 768px;
-    padding: 45px 60px 30px;
+    padding: 45px 0 30px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .header {
-    max-width: 650px;
+    max-width: 680px;
     padding: 28px 0px 32px 27px;
   }
 }
 
+@media screen and (max-width: 720px) and (min-width: 540px) {
+  .header {
+    max-width: 525px;
+    padding: 25px 0 25px;
+  }
+}
+
+@media screen and (max-width: 539px) and (min-width: 425px) {
+  .header {
+    max-width: 420px;
+  }
+}
+
+
+@media screen and (max-width: 424px) and (min-width: 321px) {
+  .header {
+    max-width: 320px;
+  }
+}
 @media screen and (max-width: 320px) {
   .header {
     max-width: 320px;
-    padding: 28px 0px 32px 27px;
   }
 }

@@ -9,20 +9,26 @@
   padding: 50px 0 68px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 880px) {
   .elements {
-    max-width: 660px;
+    max-width: 667px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 36px 0 50px;
   }
 }
 
 @media screen and (max-width: 768px) {
   .elements {
     max-width: 580px;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 36px 0 50px;
   }
 }
 
+@media screen and (max-width: 610px) {
+  .elements {
+    max-width: 320px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
 @media screen and (max-width: 320px) {
   .elements {

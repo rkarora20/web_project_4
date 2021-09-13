@@ -15,16 +15,11 @@ const profileSubtitle = document.querySelector("#profile-subtitle");
 
 // form values
 
+
 function modalToggle() {
+    profileTitle.value = profileHeading.textContent;
+    profileSubtitle.value = profileSubheading.textContent;
     modal.classList.toggle("modal_is-open");
-    if ("modal_is-open") {
-        profileTitle.value = "";
-        profileSubtitle.value ="";
-    }
-    else {
-        profileTitle.value = profileHeading.textContent;
-        profileSubtitle.value = profileSubheading.textContent;
-    }
     }
 
 function updateProfile(event) {

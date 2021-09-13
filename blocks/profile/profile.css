@@ -7,7 +7,7 @@
   justify-content: space-between;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 768px) {
   .profile {
     max-width: 680px;
   }
@@ -19,7 +19,7 @@
   }
 }
 
-@media screen and (max-width: 539px) and (min-width: 425px) {
+@media screen and (max-width: 539px) {
   .profile {
     max-width: 425px;
     display: flex;
@@ -29,8 +29,6 @@
 @media screen and (max-width: 424px) and (min-width: 321px) {
   .profile {
     max-width: 320px;
-    display: flex;
-    flex-direction: column;
   }
 }
 
@@ -38,7 +36,5 @@
   .profile {
     max-width: 282px;
     padding-top: 42px;
-    display: flex;
-    flex-direction: column;
   }
 }

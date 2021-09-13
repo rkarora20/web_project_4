@@ -33,13 +33,7 @@
   }
 }
 
-
 @media screen and (max-width: 424px) and (min-width: 321px) {
-  .header {
-    max-width: 320px;
-  }
-}
-@media screen and (max-width: 320px) {
   .header {
     max-width: 320px;
   }

@@ -1,4 +1,5 @@
 .profile__subheading {
+  max-width: 415px;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -6,8 +7,8 @@
   color: #ffffff;
   margin: 0;
   padding: 0;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   overflow: hidden;
 }
 
@@ -27,6 +28,5 @@
 @media screen and (max-width: 320px) {
   .profile__subheading {
     font-size: 14px;
-    text-align: center;
   }
 }

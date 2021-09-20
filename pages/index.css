@@ -19,7 +19,7 @@
 @import url(../blocks/modal/__close-btn/modal__close-btn.css);
 @import url(../blocks/modal/__save-button/modal__save-button.css);
 @import url(../blocks/modal/__popup/modal__popup.css);
-@import url(../blocks/modal/_type/modal_type_preview.css);
+@import url(../blocks/modal/__preview/modal__preview.css);
 @import url(../blocks/modal/__title/_preview/modal__title_preview.css);
 
 /* form */

@@ -34,8 +34,6 @@ const previewTitle = modalImagePreview.querySelector(".modal__title_preview");
 
 function openPopupWindow(modalWindow) {
     modalWindow.classList.toggle("modal_is-open");
-    profileTitle.value = profileHeading.textContent;
-    profileSubtitle.value = profileSubheading.textContent;
     }
 
 function closePopupWindow(modalWindow) {
@@ -96,7 +94,11 @@ formEditProfile.addEventListener("submit", updateProfile);
 
 formAddCard.addEventListener("submit", addImage);
 
-profileEditButton.addEventListener("click", () => openPopupWindow(modalEditProfile));
+profileEditButton.addEventListener("click", function() { 
+    openPopupWindow(modalEditProfile);   
+    profileTitle.value = profileHeading.textContent;    
+    profileSubtitle.value = profileSubheading.textContent;
+    });
 
 editProfileCloseBtn.addEventListener("click", () => closePopupWindow(modalEditProfile));
 

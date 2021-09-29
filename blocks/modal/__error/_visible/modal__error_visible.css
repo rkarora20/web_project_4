@@ -1,0 +1,8 @@
+.modal__error_visible {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1.25;
+    font-weight: normal;
+    color: #ff0000;
+    margin: 0;
+}

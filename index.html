@@ -124,14 +124,22 @@
                 id="profile-title"
                 class="form__input"
                 placeholder="Name"
+                minlength="2"
+                maxlength="40"
+                required
               />
+              <span id="profile-title-error"></span>
               <input
                 type="text"
                 name="profile-subtitle"
                 id="profile-subtitle"
                 class="form__input"
                 placeholder="About me"
+                minlength="2"
+                maxlength="200"
+                required
               />
+              <span id="profile-subtitle-error"></span>
               <button class="modal__save-button" type="submit">Save</button>
             </form>
           </div>
@@ -148,14 +156,20 @@
                 id="image-title"
                 class="form__input"
                 placeholder="Title"
+                minlength="1"
+                maxlength="30"
+                required
               />
+              <span id="image-title-error"></span>
               <input
-                type="text"
+                type="url"
                 name="image-url"
                 id="image-url"
                 class="form__input"
                 placeholder="Image link"
+                required
               />
+              <span id="image-url-error"></span>
               <button class="modal__save-button" type="submit">Create</button>
             </form>
           </div>
@@ -185,6 +199,7 @@
         </article>
       </template>
     </div>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/cards.js"></script>
     <script src="./scripts/index.js"></script>
   </body>

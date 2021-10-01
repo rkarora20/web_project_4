@@ -1,7 +1,5 @@
 //cards
-const cardTemplate = document
-  .querySelector("#cardTemplate")
-  .content.querySelector(".element");
+const cardTemplate = document.querySelector("#cardTemplate").content.querySelector(".element");
 const cardElements = document.querySelector(".elements");
 
 // profile
@@ -21,6 +19,7 @@ const editProfileCloseBtn = modalEditProfile.querySelector(".modal__close-btn");
 const addCardButton = document.querySelector(".profile__add-button");
 const addCardCloseBtn = modalAddCard.querySelector(".modal__close-btn");
 const imagePopupCloseBtn = modalImagePreview.querySelector(".modal__close-btn");
+const addCardSaveButton = modalAddCard.querySelector(".modal__save-button"); //submit button for add card modal
 
 // page elements
 const profileTitle = document.querySelector("#profile-title");
@@ -35,13 +34,21 @@ const previewTitle = modalImagePreview.querySelector(".modal__title_preview");
 // functions
 
 function closeModalClick(evt) {
-  evt.target.classList.remove("modal_is-open");
+  if(evt.target.classList.contains("modal")) {
+    return closePopupWindow(document.querySelector(".modal_is-open"));
+}
 }
 
 function closeModalEsc(evt) {
   if (evt.key === "Escape") {
     return closePopupWindow(document.querySelector(".modal_is-open"));
   }
+}
+
+function resetForm() {
+  addCardSaveButton.classList.toggle("modal__save-button_disabled");
+  disabled=true;
+  formAddCard.reset();
 }
 
 function openPopupWindow(modalWindow) {
@@ -72,6 +79,7 @@ function addImage(event) {
   const cardElement = createCard(card);
   cardElements.prepend(cardElement);
   closePopupWindow(modalAddCard);
+  resetForm();
 }
 
 function likeButtonToggle(evt) {

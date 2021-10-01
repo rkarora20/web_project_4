@@ -1,9 +1,7 @@
 const showInputError = (inputEl, formEl, settings) => {
   const errorSpan = formEl.querySelector(`#${inputEl.id}-error`);
-
   errorSpan.textContent = inputEl.validationMessage;
-  errorSpan.classList.add(settings.errorClass);
-  
+  errorSpan.classList.add(settings.errorClass); 
   inputEl.classList.add(settings.inputErrorClass);
 };
 
@@ -16,19 +14,18 @@ const hideInputError = (inputEl, formEl, settings) => {
 
 const checkInputValidity = (formEl, inputEl, settings) => {
   if (inputEl.validity.valid) {
-    console.log("valid");
     hideInputError(inputEl, formEl, settings);
   } else {
     showInputError(inputEl, formEl, settings);
   }
 };
 
-const isInputValid = (inputList) => {
+const checkIfFormValid  = (inputList) => {
   return inputList.every((input) => input.validity.valid === true);
 };
 
 const toggleButton = (inputList, submitButton, settings) => {
-  if (isInputValid(inputList)) {
+  if (checkIfFormValid (inputList)) {
     submitButton.disabled = false;
     submitButton.classList.remove(settings.inactiveButtonClass);
   } else {
@@ -40,6 +37,7 @@ const toggleButton = (inputList, submitButton, settings) => {
 const setEventListeners = (formEl, settings) => {
   const inputList = [...formEl.querySelectorAll(settings.inputSelector)];
   let submitButton = formEl.querySelector(settings.submitButtonSelector);
+
   inputList.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, settings);

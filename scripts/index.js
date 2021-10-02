@@ -45,9 +45,9 @@ function closeModalEsc(evt) {
   }
 }
 
-function resetForm() {
+function resetAddCardForm() {
   addCardSaveButton.classList.toggle("modal__save-button_disabled");
-  disabled=true;
+  addCardSaveButton.disabled=true;
   formAddCard.reset();
 }
 
@@ -79,7 +79,7 @@ function addImage(event) {
   const cardElement = createCard(card);
   cardElements.prepend(cardElement);
   closePopupWindow(modalAddCard);
-  resetForm();
+  resetAddCardForm();
 }
 
 function likeButtonToggle(evt) {

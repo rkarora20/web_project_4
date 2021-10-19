@@ -1,5 +1,11 @@
+import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
+import initialCards from "./cards.js";
+
 //cards
-const cardTemplate = document.querySelector("#cardTemplate").content.querySelector(".element");
+const cardTemplate = document
+  .querySelector("#cardTemplate")
+  .content.querySelector(".element");
 const cardElements = document.querySelector(".elements");
 
 // profile
@@ -34,9 +40,9 @@ const previewTitle = modalImagePreview.querySelector(".modal__title_preview");
 // functions
 
 function closeModalClick(evt) {
-  if(evt.target.classList.contains("modal")) {
+  if (evt.target.classList.contains("modal")) {
     return closePopupWindow(document.querySelector(".modal_is-open"));
-}
+  }
 }
 
 function closeModalEsc(evt) {
@@ -47,7 +53,7 @@ function closeModalEsc(evt) {
 
 function resetAddCardForm() {
   addCardSaveButton.classList.toggle("modal__save-button_disabled");
-  addCardSaveButton.disabled=true;
+  addCardSaveButton.disabled = true;
   formAddCard.reset();
 }
 
@@ -109,7 +115,9 @@ function createCard(card) {
 }
 
 function renderCard(card, wrapper) {
-  wrapper.append(createCard(card));
+  const element = new Card(card, "#cardTemplate").generateCard();
+  wrapper.append(element);
+  // wrapper.append(createCard(card));
 }
 
 // //event listeners
@@ -138,3 +146,22 @@ imagePopupCloseBtn.addEventListener("click", () =>
 initialCards.forEach((card) => {
   renderCard(card, cardElements);
 });
+
+//validation
+
+const formValidationConfig = {
+  inputSelector: ".form__input",
+  submitButtonSelector: ".modal__save-button",
+  inactiveButtonClass: "modal__save-button_disabled",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+const addFormValidator = new FormValidator(formValidationConfig, formAddCard);
+addFormValidator.enableValidation();
+
+const editFormValidator = new FormValidator(
+  formValidationConfig,
+  formEditProfile
+);
+editFormValidator.enableValidation();

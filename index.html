@@ -48,7 +48,7 @@
           <div class="modal__body">
             <button class="modal__close-btn" type="button"></button>
             <h2 class="modal__title">Edit profile</h2>
-            <form class="form" name="form">
+            <form class="form" name="form" id="editForm">
               <input
                 type="text"
                 name="profile-title"
@@ -80,7 +80,7 @@
           <div class="modal__body">
             <button class="modal__close-btn" type="button"></button>
             <h2 class="modal__title">New place</h2>
-            <form class="form" name="form">
+            <form class="form" name="form" id="addForm">
               <input
                 type="text"
                 name="image-title"
@@ -121,7 +121,7 @@
 
       <template id="cardTemplate">
         <article class="element">
-          <img class="element__image"/>
+          <img class="element__image" src="#"/>
           <div class="element__info">
             <h2 class="element__description"></h2>
             <button class="element__like-button" type="button"></button>
@@ -130,8 +130,6 @@
         </article>
       </template>
     </div>
-    <script src="./scripts/validate.js"></script>
-    <script src="./scripts/cards.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

@@ -1,7 +1,7 @@
 const showInputError = (inputEl, formEl, settings) => {
   const errorSpan = formEl.querySelector(`#${inputEl.id}-error`);
   errorSpan.textContent = inputEl.validationMessage;
-  errorSpan.classList.add(settings.errorClass); 
+  errorSpan.classList.add(settings.errorClass);
   inputEl.classList.add(settings.inputErrorClass);
 };
 
@@ -20,12 +20,12 @@ const checkInputValidity = (formEl, inputEl, settings) => {
   }
 };
 
-const checkIfFormValid  = (inputList) => {
+const checkIfFormValid = (inputList) => {
   return inputList.every((input) => input.validity.valid === true);
 };
 
 const toggleButton = (inputList, submitButton, settings) => {
-  if (checkIfFormValid (inputList)) {
+  if (checkIfFormValid(inputList)) {
     submitButton.disabled = false;
     submitButton.classList.remove(settings.inactiveButtonClass);
   } else {

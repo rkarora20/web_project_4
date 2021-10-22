@@ -1,36 +1,20 @@
+import {
+  openPopupWindow,
+  closePopupWindow,
+  closeModalClick,
+  closeModalEsc,
+} from "./utils.js";
+
 const modalImagePreview = document.querySelector(".modal_type_popup");
 const popupImage = modalImagePreview.querySelector(".modal__popup");
 const previewTitle = modalImagePreview.querySelector(".modal__title_preview");
 
 const imagePopupCloseBtn = modalImagePreview.querySelector(".modal__close-btn");
 
-function closeModalEsc(evt) {
-  if (evt.key === "Escape") {
-    return closePopupWindow(document.querySelector(".modal_is-open"));
-  }
-}
-
-function closeModalClick(evt) {
-  if (evt.target.classList.contains("modal")) {
-    return closePopupWindow(document.querySelector(".modal_is-open"));
-  }
-}
-
 function resetAddCardForm() {
   addCardSaveButton.classList.toggle("modal__save-button_disabled");
   addCardSaveButton.disabled = true;
   formAddCard.reset();
-}
-function openPopupWindow(modalWindow) {
-  document.addEventListener("click", closeModalClick);
-  document.addEventListener("keydown", closeModalEsc);
-  modalWindow.classList.toggle("modal_is-open");
-}
-
-function closePopupWindow(modalWindow) {
-  document.removeEventListener("click", closeModalClick);
-  document.removeEventListener("keydown", closeModalEsc);
-  modalWindow.classList.toggle("modal_is-open");
 }
 
 class Card {
@@ -88,13 +72,10 @@ class Card {
   generateCard() {
     this._element = this._getTemplate();
     this._setEventListeners();
-
-    this._element.querySelector(".element__description").textContent =
-      this._name;
-    this._element.querySelector(".element__image").src = `${this._link}`;
-    this._element.querySelector(
-      ".element__image"
-    ).alt = `picture of ${this._name}`;
+    this._elementImage = this._element.querySelector(".element__image");
+    this._element.querySelector(".element__description").textContent = this._name;
+    this._elementImage.src = `${this._link}`;
+    this._elementImage.alt = `picture of ${this._name}`;
     return this._element;
   }
 }

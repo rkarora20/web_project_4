@@ -1,6 +1,12 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
 import initialCards from "./cards.js";
+import {
+  openPopupWindow,
+  closePopupWindow,
+  closeModalClick,
+  closeModalEsc,
+} from "./utils.js";
 
 //cards
 const cardTemplate = document
@@ -39,36 +45,6 @@ const previewTitle = modalImagePreview.querySelector(".modal__title_preview");
 
 // functions
 
-function closeModalClick(evt) {
-  if (evt.target.classList.contains("modal")) {
-    return closePopupWindow(document.querySelector(".modal_is-open"));
-  }
-}
-
-function closeModalEsc(evt) {
-  if (evt.key === "Escape") {
-    return closePopupWindow(document.querySelector(".modal_is-open"));
-  }
-}
-
-function resetAddCardForm() {
-  addCardSaveButton.classList.toggle("modal__save-button_disabled");
-  addCardSaveButton.disabled = true;
-  formAddCard.reset();
-}
-
-function openPopupWindow(modalWindow) {
-  document.addEventListener("click", closeModalClick);
-  document.addEventListener("keydown", closeModalEsc);
-  modalWindow.classList.toggle("modal_is-open");
-}
-
-function closePopupWindow(modalWindow) {
-  document.removeEventListener("click", closeModalClick);
-  document.removeEventListener("keydown", closeModalEsc);
-  modalWindow.classList.toggle("modal_is-open");
-}
-
 function updateProfile(event) {
   event.preventDefault();
   profileHeading.textContent = profileTitle.value;
@@ -76,53 +52,32 @@ function updateProfile(event) {
   closePopupWindow(modalEditProfile);
 }
 
+function renderCard(card, wrapper) {
+  const element = new Card(card, "#cardTemplate").generateCard();
+  wrapper.prepend(element);
+}
+
+initialCards.forEach((card) => {
+  renderCard(card, cardElements);
+});
+
 function addImage(event) {
   event.preventDefault();
-  const card = {
+  const newCard = {
     name: addImageTitle.value,
     link: addImageUrl.value,
   };
-  const cardElement = createCard(card);
-  cardElements.prepend(cardElement);
+  renderCard(newCard, cardElements);
+
   closePopupWindow(modalAddCard);
-  resetAddCardForm();
-}
-
-function likeButtonToggle(evt) {
-  evt.target.classList.toggle("element__like-button_active");
-}
-
-function imagePreview(card) {
-  openPopupWindow(modalImagePreview);
-  popupImage.src = card.link;
-  popupImage.alt = `picture of ${card.name}`;
-  previewTitle.textContent = card.name;
-}
-
-function createCard(card) {
-  const cardElement = cardTemplate.cloneNode(true);
-
-  const cardImage = cardElement.querySelector(".element__image");
-  const imageLikeBtn = cardElement.querySelector(".element__like-button");
-  const imageDeleteBtn = cardElement.querySelector(".element__delete-button");
-  cardElement.querySelector(".element__description").textContent = card.name;
-  cardImage.src = `${card.link}`;
-  cardImage.alt = `picture of ${card.name}`;
-  cardImage.addEventListener("click", () => imagePreview(card));
-  imageLikeBtn.addEventListener("click", likeButtonToggle);
-  imageDeleteBtn.addEventListener("click", () => cardElement.remove());
-  return cardElement;
-}
-
-function renderCard(card, wrapper) {
-  const element = new Card(card, "#cardTemplate").generateCard();
-  wrapper.append(element);
-  // wrapper.append(createCard(card));
+  addCardSaveButton.classList.toggle("modal__save-button_disabled");
+  addCardSaveButton.disabled = true;
+  formAddCard.reset();
 }
 
 // //event listeners
-formEditProfile.addEventListener("submit", updateProfile);
 
+formEditProfile.addEventListener("submit", updateProfile);
 formAddCard.addEventListener("submit", addImage);
 
 profileEditButton.addEventListener("click", function () {
@@ -142,10 +97,6 @@ addCardCloseBtn.addEventListener("click", () => closePopupWindow(modalAddCard));
 imagePopupCloseBtn.addEventListener("click", () =>
   closePopupWindow(modalImagePreview)
 ); //preview popup close
-
-initialCards.forEach((card) => {
-  renderCard(card, cardElements);
-});
 
 //validation
 

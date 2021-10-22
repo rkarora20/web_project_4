@@ -49,7 +49,7 @@ class FormValidator {
     const inputList = Array.from(
       this._formElement.querySelectorAll(this._inputSelector)
     );
-    let submitButton = this._formElement.querySelector(
+    const submitButton = this._formElement.querySelector(
       this._submitButtonSelector
     );
 

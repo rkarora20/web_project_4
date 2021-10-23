@@ -1,21 +1,8 @@
-import {
-  openPopupWindow,
-  closePopupWindow,
-  closeModalClick,
-  closeModalEsc,
-} from "./utils.js";
+import { openPopupWindow } from "./utils.js";
 
 const modalImagePreview = document.querySelector(".modal_type_popup");
 const popupImage = modalImagePreview.querySelector(".modal__popup");
 const previewTitle = modalImagePreview.querySelector(".modal__title_preview");
-
-const imagePopupCloseBtn = modalImagePreview.querySelector(".modal__close-btn");
-
-function resetAddCardForm() {
-  addCardSaveButton.classList.add("modal__save-button_disabled");
-  addCardSaveButton.disabled = true;
-  formAddCard.reset();
-}
 
 class Card {
   constructor(card, cardSelector) {
@@ -36,7 +23,7 @@ class Card {
   _handleLikeButton() {
     this._element
       .querySelector(".element__like-button")
-      .classList.add("element__like-button_active");
+      .classList.toggle("element__like-button_active");
   }
 
   _handleDeleteButton() {

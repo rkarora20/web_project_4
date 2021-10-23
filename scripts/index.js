@@ -1,17 +1,9 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
 import initialCards from "./cards.js";
-import {
-  openPopupWindow,
-  closePopupWindow,
-  closeModalClick,
-  closeModalEsc,
-} from "./utils.js";
+import { openPopupWindow, closePopupWindow } from "./utils.js";
 
 //cards
-const cardTemplate = document
-  .querySelector("#cardTemplate")
-  .content.querySelector(".element");
 const cardElements = document.querySelector(".elements");
 
 // profile
@@ -70,7 +62,7 @@ function addImage(event) {
   renderCard(newCard, cardElements);
 
   closePopupWindow(modalAddCard);
-  addCardSaveButton.classList.toggle("modal__save-button_disabled");
+  addCardSaveButton.classList.add("modal__save-button_disabled");
   addCardSaveButton.disabled = true;
   formAddCard.reset();
 }

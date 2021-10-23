@@ -1,13 +1,13 @@
 function openPopupWindow(modalWindow) {
   document.addEventListener("click", closeModalClick);
   document.addEventListener("keydown", closeModalEsc);
-  modalWindow.classList.toggle("modal_is-open");
+  modalWindow.classList.add("modal_is-open");
 }
 
 function closePopupWindow(modalWindow) {
   document.removeEventListener("click", closeModalClick);
   document.removeEventListener("keydown", closeModalEsc);
-  modalWindow.classList.toggle("modal_is-open");
+  modalWindow.classList.remove("modal_is-open");
 }
 
 function closeModalEsc(evt) {
